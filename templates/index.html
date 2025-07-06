@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sudoku Solver</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+  <style>
+    input[type="number"] {
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    input::-webkit-inner-spin-button,
+    input::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 flex flex-col items-center p-6">
+
+  <!-- Title -->
+  <h1 class="text-4xl font-bold text-purple-600 mb-6">🧠 GridIQ</h1>
+
+  <!-- Sudoku Grids -->
+  <div class="flex flex-wrap gap-10 justify-center w-full max-w-7xl">
+
+    <!-- 4x4 Grid -->
+    <div class="text-center">
+      <h2 class="font-semibold text-purple-500 mb-2">4x4 Grid</h2>
+      <div id="grid-4" class="bg-white p-2 border-4 border-purple-300 rounded mb-2"></div>
+      <button onclick="solveSudoku4()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded">Solve</button>
+      <button onclick="clearGrid4()" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded ml-2">Reset</button>
+    </div>
+
+    <!-- 6x6 Grid -->
+    <div class="text-center">
+      <h2 class="font-semibold text-purple-500 mb-2">6x6 Grid</h2>
+      <div id="grid-6" class="bg-white p-2 border-4 border-purple-300 rounded mb-2"></div>
+      <button onclick="solveSudoku6()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded">Solve</button>
+      <button onclick="clearGrid6()" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded ml-2">Reset</button>
+    </div>
+
+    <!-- 9x9 Grid -->
+    <div class="text-center">
+      <h2 class="font-semibold text-purple-500 mb-2">9x9 Grid</h2>
+      <div id="grid-9" class="bg-white p-2 border-4 border-purple-300 rounded mb-2"></div>
+      <button onclick="solveSudoku9()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded">Solve</button>
+      <button onclick="clearGrid9()" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded ml-2">Reset</button>
+    </div>
+  </div>
+
+  <!-- Fun Facts Section -->
+  <div class="mt-12 p-6 bg-purple-100 rounded-lg shadow max-w-4xl text-gray-800">
+    <h2 class="text-2xl font-bold mb-4 text-purple-700">🔍 Fun Facts About Sudoku</h2>
+    <ul class="list-disc pl-6 space-y-2 text-lg">
+      <li>🧠 Sudoku doesn't require math—just logic!</li>
+      <li>🧩 The name “Sudoku” means “single number” in Japanese.</li>
+      <li>🌍 Modern Sudoku was popularized in Japan in 1986.</li>
+      <li>🧮 There are over 6.67×10²¹ valid 9x9 Sudoku grids!</li>
+      <li>💡 Great for boosting memory, patience & concentration.</li>
+    </ul>
+  </div>
+
+  <!-- Credits -->
+  <footer class="mt-10 text-center text-sm text-gray-600">
+    Developed with ❤️ by <span class="font-semibold text-purple-700">Satwik Sanjeev Kudipudi</span>
+  </footer>
+
+</body>
+</html>
